@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 
 ## Loading and preprocessing the data
 ```{r setoptions,echo=FALSE}
@@ -10,7 +13,6 @@ library(dplyr)
 library(ggplot2)
 setwd("C:/Users/liuzhi/Documents/R/work-directory")
 act <- read.csv("activity.csv")
-act <- tbl_df(act)
 str(act)
 ```
 
@@ -66,7 +68,6 @@ for(i in 1:nrow){
   if (is.na(act[i,1]))
     act3[i,1] <- act2_2[i,4]
 }
-act3
 ```
 
 7.Histogram of the total number of steps taken each day after missing values are imputed
@@ -94,6 +95,7 @@ the mean and median both increased slightly after fill miss values.
 ```{r}
 act4 <- act
 act4$weekday <- weekdays(act3$date) 
+print(unique(act4$weekday))
 for (j in 1:length(act[,1])) {
   if (act4[j,4]=="ÐÇÆÚÁù" || act4[j,4]=="ÐÇÆÚÈÕ")
     act4$day_end[j] = "weekend"
