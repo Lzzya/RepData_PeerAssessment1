@@ -1,7 +1,7 @@
 # RepData_PeerAssessment1
 Peer Assessment 1 for Reproducible Research
 
-Exist chinese uncodes in weekdays in:
+There are chinese characters in names of weekdays.
 
 8.Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
 ```{r}
@@ -15,4 +15,4 @@ for (j in 1:length(act[,1])) {
     act4$day_end[j] = "weekday"
 }
 ```
-I use UTF-8 to save codes.
+I saved codes by encoding ruls "UTF-8".
